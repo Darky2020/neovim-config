@@ -1,0 +1,22 @@
+-----------------------------------------------------
+HIGH Priority:
+Add linters for lua and python
+Add binds such as go to definition/go to references
+
+-----------------------------------------------------
+MEDIUM Priority:
+Format and lint the config files
+Add shortcuts for creating generic files such as .gitignore or pyrightconfig.json
+Git diff functionality
+
+-----------------------------------------------------
+LOW Priority:
+Add custom highlighting for python r"" / f"" / b"" strings
+Move the dashboard to DOOM setting(?)
+Opening dashboard is jank with toggleterm toggled on
+
+-----------------------------------------------------
+Look into:
+
+https://github.com/ja-ford/delaytrain.nvim
+-----------------------------------------------------
