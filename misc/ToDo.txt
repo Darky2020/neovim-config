@@ -1,7 +1,6 @@
 -----------------------------------------------------
 HIGH Priority:
 Add linters for lua and python
-Add binds such as go to definition/go to references
 
 -----------------------------------------------------
 MEDIUM Priority:

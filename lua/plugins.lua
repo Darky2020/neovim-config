@@ -86,6 +86,14 @@ return require("packer").startup(function(use)
     }
 
     use {
+        'nvim-telescope/telescope-fzf-native.nvim',
+        run = 'make'
+    }
+
+    use { 'junegunn/fzf', run = ":call fzf#install()" }
+    use 'junegunn/fzf.vim'
+
+    use {
         "folke/which-key.nvim",
         config = function() require('whichkey-config') end,
     }
