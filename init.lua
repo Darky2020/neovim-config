@@ -15,6 +15,7 @@ require('treesitter-config')
 require('toggleterm-config')
 require('telescope-config')
 require('indent-blankline-config')
+require('diffview-config')
 
 -- Share clipboard with the system one
 vim.opt.clipboard = "unnamedplus"

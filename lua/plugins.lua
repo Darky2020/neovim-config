@@ -121,4 +121,5 @@ return require("packer").startup(function(use)
     })
 
     use "lukas-reineke/indent-blankline.nvim"
+    use "sindrets/diffview.nvim"
 end)

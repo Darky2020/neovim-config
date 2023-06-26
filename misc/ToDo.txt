@@ -6,7 +6,6 @@ Add linters for lua and python
 MEDIUM Priority:
 Format and lint the config files
 Add shortcuts for creating generic files such as .gitignore or pyrightconfig.json
-Git diff functionality
 
 -----------------------------------------------------
 LOW Priority:
