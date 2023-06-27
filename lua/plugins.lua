@@ -122,4 +122,9 @@ return require("packer").startup(function(use)
 
     use "lukas-reineke/indent-blankline.nvim"
     use "sindrets/diffview.nvim"
+
+    use {
+        'folke/trouble.nvim',
+        requires = {'nvim-tree/nvim-web-devicons'}
+    }
 end)

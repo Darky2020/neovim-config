@@ -16,6 +16,7 @@ require('toggleterm-config')
 require('telescope-config')
 require('indent-blankline-config')
 require('diffview-config')
+require('trouble-config')
 
 -- Share clipboard with the system one
 vim.opt.clipboard = "unnamedplus"
@@ -73,3 +74,10 @@ vim.opt.virtualedit = "onemore"
 
 -- Move to next/prev lines with H and L
 vim.opt.whichwrap = "h,l,b,s"
+
+-- Draw a border around diagnostic windows
+vim.diagnostic.config{
+    float = {
+        border="single"
+    }
+}

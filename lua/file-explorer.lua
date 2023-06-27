@@ -15,7 +15,20 @@ require('nvim-tree').setup({
     sync_root_with_cwd = true,
     reload_on_bufenter = false,
     respect_buf_cwd = false,
-    on_attach = "default",
+    on_attach = function (bufnr)
+        local api = require "nvim-tree.api"
+
+        local function opts(desc)
+            return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+        end
+
+        -- default mappings
+        api.config.mappings.default_on_attach(bufnr)
+
+        -- custom mappings
+        vim.keymap.set('n', 'h', api.tree.change_root_to_parent, opts('Up'))
+        vim.keymap.set('n', 'l', api.node.open.edit, opts('Help'))
+    end,
     remove_keymaps = false,
     select_prompts = false,
     view = {

@@ -19,8 +19,13 @@ wk.register({
     },
     ["<leader>t"] = {
         "Toggle horizontal terminal"
+    },
+    ["<leader>v"] = {
+        ":lua vim.diagnostic.open_float()<CR>",
+        "Show current diagnostic in floating window"
     }
 })
+
 
 -- Better keymaps for commend toggling
 map("v", "<leader>/", "gc", {})

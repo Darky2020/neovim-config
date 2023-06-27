@@ -2,15 +2,27 @@ local builtin = require('telescope.builtin')
 local wk = require("which-key")
 
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
+vim.keymap.set('n', '<leader>sf', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>st', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+vim.keymap.set('n', '<leader>sb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+vim.keymap.set('n', '<leader>sh', builtin.help_tags, {})
 vim.keymap.set('n', 'gd',         builtin.lsp_definitions, {})
 vim.keymap.set('n', 'gr',         builtin.lsp_references, {})
 
 wk.register({
+    ["<leader>f"] = {
+        "Find..."
+    },
+    ["<leader>s"] = {
+        "Find..."
+    },
     ["<leader>ff"] = {
+        "Find files"
+    },
+    ["<leader>sf"] = {
         "Find files"
     },
     ["<leader>fg"] = {
@@ -22,7 +34,13 @@ wk.register({
     ["<leader>fb"] = {
         "Find buffers"
     },
+    ["<leader>sb"] = {
+        "Find buffers"
+    },
     ["<leader>fh"] = {
+        "Find docs"
+    },
+    ["<leader>sh"] = {
         "Find docs"
     },
 })
