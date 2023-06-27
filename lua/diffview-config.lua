@@ -2,7 +2,7 @@ local wk = require("which-key")
 
 wk.register({
     ["<leader>g"] = {
-        "Git..."
+        "+Git..."
     },
     ["<leader>gd"] = {
         ":DiffviewFileHistory %<CR>",

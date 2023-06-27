@@ -14,10 +14,10 @@ vim.keymap.set('n', 'gr',         builtin.lsp_references, {})
 
 wk.register({
     ["<leader>f"] = {
-        "Find..."
+        "+Find..."
     },
     ["<leader>s"] = {
-        "Find..."
+        "+Find..."
     },
     ["<leader>ff"] = {
         "Find files"
