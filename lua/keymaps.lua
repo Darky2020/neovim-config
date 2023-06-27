@@ -22,7 +22,7 @@ wk.register({
     },
     ["<leader>v"] = {
         ":lua vim.diagnostic.open_float()<CR>",
-        "Show current diagnostic in floating window"
+        "Show current diagnostic in a floating window"
     }
 })
 
