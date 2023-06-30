@@ -6,9 +6,10 @@ null_ls.setup({
         -- formatting
         null_ls.builtins.formatting.ruff,
         null_ls.builtins.formatting.black.with({
-            extra_args = {"-l", "80"}
+            extra_args = { "-l", "80" }
         }),
         null_ls.builtins.formatting.stylua,
+        -- null_ls.builtins.formatting.clang_format,
     },
     on_attach = function(client, bufnr)
         if client.supports_method("textDocument/formatting") then
