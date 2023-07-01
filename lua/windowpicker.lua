@@ -1,8 +1,8 @@
-require("window-picker").setup{
+require("window-picker").setup({
     autoselect_one = true,
     include_current_win = true,
-    selection_chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890',
-    use_winbar = 'never',
+    selection_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
+    use_winbar = "never",
     show_prompt = true,
     filter_func = nil,
 
@@ -10,10 +10,10 @@ require("window-picker").setup{
         -- filter using buffer options
         bo = {
             -- if the file type is one of following, the window will be ignored
-            filetype = { 'NvimTree', "neo-tree", "notify" },
+            filetype = { "NvimTree", "neo-tree", "notify" },
 
             -- if the buffer type is one of following, the window will be ignored
-            buftype = { 'terminal' },
+            buftype = { "terminal" },
         },
 
         -- filter using window options
@@ -28,7 +28,7 @@ require("window-picker").setup{
         file_name_contains = {},
     },
 
-    fg_color = '#ffffff',
-    current_win_hl_color = '#245b73',
-    other_win_hl_color = '#245b73',
-}
+    fg_color = "#ffffff",
+    current_win_hl_color = "#245b73",
+    other_win_hl_color = "#245b73",
+})

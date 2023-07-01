@@ -1,24 +1,24 @@
 vim.g.mapleader = " "
 
-require('plugins')
-require('colortheme')
-require('file-explorer')
-require('mason-config')
-require('null-ls-config')
-require('python-lsp')
-require('lua-lsp')
-require('cpp-lsp')
-require('autocompletion')
-require('keymaps')
-require('statusline')
-require('buffertabs')
-require('windowpicker')
-require('treesitter-config')
-require('toggleterm-config')
-require('telescope-config')
-require('indent-blankline-config')
-require('diffview-config')
-require('trouble-config')
+require("plugins")
+require("colortheme")
+require("file-explorer")
+require("mason-config")
+require("null-ls-config")
+require("python-lsp")
+require("lua-lsp")
+require("cpp-lsp")
+require("autocompletion")
+require("keymaps")
+require("statusline")
+require("buffertabs")
+require("windowpicker")
+require("treesitter-config")
+require("toggleterm-config")
+require("telescope-config")
+require("indent-blankline-config")
+require("diffview-config")
+require("trouble-config")
 
 -- Share clipboard with the system one
 vim.opt.clipboard = "unnamedplus"
@@ -61,7 +61,7 @@ vim.opt.ignorecase = true
 
 -- Convert ukrainian keys into english keys
 vim.opt.langmap =
-"ЙQ,ЦW,УE,КR,ЕT,НY,ГU,ШI,ЩO,ЗP,Х{,Ї},ФA,ІS,ВD,АF,ПG,РH,ОJ,ЛK,ДL,Ж:,Є\",ЯZ,ЧX,СC,МV,ИB,ТN,ЬM,Б<,Ю>,йq,цw,уe,кr,еt,нy,гu,шi,щo,зp,х[,ї],фa,іs,вd,аf,пg,рh,оj,лk,дl,є\',яz,чx,сc,мv,иb,тn,ьm"
+"ЙQ,ЦW,УE,КR,ЕT,НY,ГU,ШI,ЩO,ЗP,Х{,Ї},ФA,ІS,ВD,АF,ПG,РH,ОJ,ЛK,ДL,Ж:,Є\",ЯZ,ЧX,СC,МV,ИB,ТN,ЬM,Б<,Ю>,йq,цw,уe,кr,еt,нy,гu,шi,щo,зp,х[,ї],фa,іs,вd,аf,пg,рh,оj,лk,дl,є',яz,чx,сc,мv,иb,тn,ьm"
 
 -- Round the indent to a multiple of tab width
 vim.opt.shiftround = true
@@ -79,8 +79,8 @@ vim.opt.virtualedit = "onemore"
 vim.opt.whichwrap = "h,l,b,s"
 
 -- Draw a border around diagnostic windows
-vim.diagnostic.config {
+vim.diagnostic.config({
     float = {
-        border = "single"
-    }
-}
+        border = "single",
+    },
+})

@@ -4,28 +4,27 @@ local map = vim.api.nvim_set_keymap
 wk.register({
     ["<leader>e"] = {
         ":NvimTreeToggle<CR>",
-        "Toggle file viewer"
+        "Toggle file viewer",
     },
     ["<leader>j"] = {
         "<C-\\><C-n><cmd>FloatingTerminal<cr><C-\\><C-n>",
-        "Toggle floating terminal"
+        "Toggle floating terminal",
     },
     ["<leader>d"] = {
         "1<C-w><C-w>:tabnew<CR>:Dashboard<CR>:IndentBlanklineDisable<CR>",
-        "Toggle dashboard"
+        "Toggle dashboard",
     },
     ["<leader>/"] = {
-        "Comment toggle"
+        "Comment toggle",
     },
     ["<leader>t"] = {
-        "Toggle horizontal terminal"
+        "Toggle horizontal terminal",
     },
     ["<leader>v"] = {
         ":lua vim.diagnostic.open_float()<CR>",
-        "Show current diagnostic"
-    }
+        "Show current diagnostic",
+    },
 })
-
 
 -- Better keymaps for commend toggling
 map("v", "<leader>/", "gc", {})
@@ -45,9 +44,9 @@ map("v", "<", "<gv", {})
 map("v", ">", ">gv", {})
 
 -- Better terminal mode movement
-map('t', '<esc>', "<C-\\><C-n>", {})
-map('t', '<C-h>', "<Cmd>wincmd h<CR>", {})
-map('t', '<C-j>', "<Cmd>wincmd j<CR>", {})
-map('t', '<C-k>', "<Cmd>wincmd k<CR>", {})
-map('t', '<C-l>', "<Cmd>wincmd l<CR>", {})
-map('t', '<C-w>', "<C-\\><C-n><C-w>", {})
+map("t", "<esc>", "<C-\\><C-n>", {})
+map("t", "<C-h>", "<Cmd>wincmd h<CR>", {})
+map("t", "<C-j>", "<Cmd>wincmd j<CR>", {})
+map("t", "<C-k>", "<Cmd>wincmd k<CR>", {})
+map("t", "<C-l>", "<Cmd>wincmd l<CR>", {})
+map("t", "<C-w>", "<C-\\><C-n><C-w>", {})

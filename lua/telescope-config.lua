@@ -1,51 +1,51 @@
-local builtin = require('telescope.builtin')
+local builtin = require("telescope.builtin")
 local wk = require("which-key")
 
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>sf', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>st', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>sb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
-vim.keymap.set('n', '<leader>sh', builtin.help_tags, {})
-vim.keymap.set('n', 'gd',         builtin.lsp_definitions, {})
-vim.keymap.set('n', 'gr',         builtin.lsp_references, {})
+vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
+vim.keymap.set("n", "<leader>sf", builtin.find_files, {})
+vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
+vim.keymap.set("n", "<leader>st", builtin.live_grep, {})
+vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
+vim.keymap.set("n", "<leader>sb", builtin.buffers, {})
+vim.keymap.set("n", "<leader>fh", builtin.help_tags, {})
+vim.keymap.set("n", "<leader>sh", builtin.help_tags, {})
+vim.keymap.set("n", "gd", builtin.lsp_definitions, {})
+vim.keymap.set("n", "gr", builtin.lsp_references, {})
 
 wk.register({
     ["<leader>f"] = {
-        "+Find..."
+        "+Find...",
     },
     ["<leader>s"] = {
-        "+Find..."
+        "+Find...",
     },
     ["<leader>ff"] = {
-        "Find files"
+        "Find files",
     },
     ["<leader>sf"] = {
-        "Find files"
+        "Find files",
     },
     ["<leader>fg"] = {
-        "Search text"
+        "Search text",
     },
     ["<leader>st"] = {
-        "Search text"
+        "Search text",
     },
     ["<leader>fb"] = {
-        "Find buffers"
+        "Find buffers",
     },
     ["<leader>sb"] = {
-        "Find buffers"
+        "Find buffers",
     },
     ["<leader>fh"] = {
-        "Find docs"
+        "Find docs",
     },
     ["<leader>sh"] = {
-        "Find docs"
+        "Find docs",
     },
 })
 
-require('telescope').setup({
+require("telescope").setup({
     defaults = {
         layout_config = {
             width = 0.96,
@@ -79,19 +79,19 @@ require('telescope').setup({
     },
     extensions = {
         fzf = {
-            fuzzy = true, -- false will only do exact matching
+            fuzzy = true,          -- false will only do exact matching
             override_generic_sorter = true, -- override the generic sorter
             override_file_sorter = true, -- override the file sorter
-            case_mode = 'smart_case', -- or "ignore_case" or "respect_case"
+            case_mode = "smart_case", -- or "ignore_case" or "respect_case"
         },
-   },
+    },
 })
 
 -- builtin.lsp_references({
 --     show_line = false
 -- })
 
-require('telescope').load_extension('fzf')
+require("telescope").load_extension("fzf")
 
 -- Prevent telescope from entering insert mode when opening a file
 vim.api.nvim_create_autocmd("WinLeave", {

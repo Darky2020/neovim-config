@@ -1,12 +1,12 @@
 -- Disable it for dashboard
 vim.g.indent_blankline_filetype_exclude = {
-    'dashboard',
+    "dashboard",
     "lspinfo",
     "packer",
     "checkhealth",
     "help",
     "man",
-    ""
+    "",
 }
 
 vim.g.indent_blankline_show_first_indent_level = false

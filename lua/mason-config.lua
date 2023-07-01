@@ -1,5 +1,5 @@
-require('mason').setup({
-    ensure_installed = { "debugpy", "black", "ruff" }
+require("mason").setup({
+    ensure_installed = { "debugpy", "black", "ruff" },
 })
 
-require('mason-lspconfig').setup()
+require("mason-lspconfig").setup()

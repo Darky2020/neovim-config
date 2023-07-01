@@ -1,3 +1,3 @@
-local lspconfig = require "lspconfig"
+local lspconfig = require("lspconfig")
 
-lspconfig.clangd.setup{}
+lspconfig.clangd.setup({})

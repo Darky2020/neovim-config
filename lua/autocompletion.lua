@@ -1,11 +1,11 @@
-vim.opt.completeopt = { 'menuone', 'noselect', 'noinsert', 'preview' }
+vim.opt.completeopt = { "menuone", "noselect", "noinsert", "preview" }
 vim.opt.shortmess = vim.opt.shortmess + { c = true }
 
-local cmp = require'cmp'
+local cmp = require("cmp")
 
 cmp.setup({
     completion = {
-        keyword_length = 2
+        keyword_length = 2,
     },
 
     sources = {
@@ -37,7 +37,7 @@ cmp.setup({
                 vsnip = "S",
                 luasnip = "S",
                 buffer = "b",
-                path = "p"
+                path = "p",
             }
             item.menu = menu_icon[entry.source.name]
             return item
@@ -45,19 +45,11 @@ cmp.setup({
     },
 
     mapping = {
-        ['<C-e>'] = cmp.mapping.abort(),
-        ['<Up>'] = cmp.mapping.select_prev_item(
-            { behavior = cmp.SelectBehavior.Select }
-        ),
-         ['<S-Tab>'] = cmp.mapping.select_prev_item(
-            { behavior = cmp.SelectBehavior.Select }
-        ),
-        ['<Down>'] = cmp.mapping.select_next_item(
-            { behavior = cmp.SelectBehavior.Select }
-        ),
-        ['<Tab>'] = cmp.mapping.select_next_item(
-            { behavior = cmp.SelectBehavior.Select }
-        ),
-        ['<CR>'] = cmp.mapping.confirm(),
-    }
+        ["<C-e>"] = cmp.mapping.abort(),
+        ["<Up>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
+        ["<S-Tab>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
+        ["<Down>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
+        ["<Tab>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
+        ["<CR>"] = cmp.mapping.confirm(),
+    },
 })

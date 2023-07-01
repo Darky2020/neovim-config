@@ -3,7 +3,7 @@ vim.g.loaded_netwPlugin = 1
 
 vim.opt.termguicolors = true
 
-require('nvim-tree').setup({
+require("nvim-tree").setup({
     auto_reload_on_write = false,
     disable_netrw = false,
     hijack_cursor = false,
@@ -15,8 +15,8 @@ require('nvim-tree').setup({
     sync_root_with_cwd = true,
     reload_on_bufenter = false,
     respect_buf_cwd = false,
-    on_attach = function (bufnr)
-        local api = require "nvim-tree.api"
+    on_attach = function(bufnr)
+        local api = require("nvim-tree.api")
 
         local function opts(desc)
             return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
@@ -26,8 +26,8 @@ require('nvim-tree').setup({
         api.config.mappings.default_on_attach(bufnr)
 
         -- custom mappings
-        vim.keymap.set('n', 'h', api.tree.change_root_to_parent, opts('Up'))
-        vim.keymap.set('n', 'l', api.node.open.edit, opts('Edit'))
+        vim.keymap.set("n", "h", api.tree.change_root_to_parent, opts("Up"))
+        vim.keymap.set("n", "l", api.node.open.edit, opts("Edit"))
     end,
     remove_keymaps = false,
     select_prompts = false,
@@ -127,7 +127,7 @@ require('nvim-tree').setup({
             resize_window = false,
             window_picker = {
                 enable = true,
-                picker = require('window-picker').pick_window,
+                picker = require("window-picker").pick_window,
                 chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
                 exclude = {
                     filetype = { "notify", "lazy", "qf", "diff", "fugitive", "fugitiveblame" },

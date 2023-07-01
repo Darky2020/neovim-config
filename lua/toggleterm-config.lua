@@ -21,9 +21,9 @@ _toggleterm.setup({
         winblend = 0,
         highlights = {
             border = "Normal",
-            background = "Normal"
-        }
-    }
+            background = "Normal",
+        },
+    },
 })
 
 local Terminal = require("toggleterm.terminal").Terminal
@@ -49,10 +49,12 @@ Terminal:new({
         winblend = 0,
         highlights = {
             border = "Normal",
-            background = "Normal"
-        }
-    }
-}):toggle():toggle()
+            background = "Normal",
+        },
+    },
+})
+    :toggle()
+    :toggle()
 
 -- Function for splitting horizontal terminals
 function split_terminal_right()
@@ -75,9 +77,9 @@ function split_terminal_right()
             winblend = 0,
             highlights = {
                 border = "Normal",
-                background = "Normal"
-            }
-        }
+                background = "Normal",
+            },
+        },
     }):open()
 end
 
@@ -101,9 +103,9 @@ local floating_terminal = Terminal:new({
         winblend = 0,
         highlights = {
             border = "Normal",
-            background = "Normal"
-        }
-    }
+            background = "Normal",
+        },
+    },
 })
 
 function float_terminal()
@@ -111,6 +113,6 @@ function float_terminal()
 end
 
 -- Keymaps
-vim.api.nvim_create_user_command('SplitTerminal', split_terminal_right, {})
-vim.api.nvim_create_user_command('FloatingTerminal', float_terminal, {})
-vim.keymap.set({"t"}, "<c-s>", "<C-\\><C-n><cmd>SplitTerminal<cr><C-\\><C-n>")
+vim.api.nvim_create_user_command("SplitTerminal", split_terminal_right, {})
+vim.api.nvim_create_user_command("FloatingTerminal", float_terminal, {})
+vim.keymap.set({ "t" }, "<c-s>", "<C-\\><C-n><cmd>SplitTerminal<cr><C-\\><C-n>")
