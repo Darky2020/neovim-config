@@ -1,6 +1,5 @@
 -----------------------------------------------------
 HIGH Priority:
-Add search result count in lualine
 
 -----------------------------------------------------
 MEDIUM Priority:
