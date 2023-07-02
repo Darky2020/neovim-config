@@ -33,10 +33,10 @@ require("dashboard").setup({
                 key = "t",
             },
             {
-                desc = "Packer Sync",
+                desc = "Lazy",
                 group = "@string",
-                action = "PackerSync",
-                key = "s",
+                action = "Lazy",
+                key = "l",
             },
             {
                 desc = "Close dashboad",

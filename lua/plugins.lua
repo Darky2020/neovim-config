@@ -1,140 +1,151 @@
-return require("packer").startup(function(use)
-    use("wbthomason/packer.nvim")
-    use("williamboman/mason.nvim")
-    use("williamboman/mason-lspconfig.nvim")
-    use("neovim/nvim-lspconfig")
-    use({
-        "jose-elias-alvarez/null-ls.nvim",
-        requires = { { "nvim-lua/plenary.nvim" } },
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
     })
+end
+vim.opt.rtp:prepend(lazypath)
 
-    use("hrsh7th/nvim-cmp")
-    use("hrsh7th/cmp-nvim-lsp")
-    use("hrsh7th/cmp-nvim-lua")
-    use("hrsh7th/cmp-nvim-lsp-signature-help")
-    use("hrsh7th/cmp-vsnip")
-    use("hrsh7th/cmp-path")
-    use("hrsh7th/cmp-buffer")
-    use("hrsh7th/vim-vsnip")
-    use("saadparwaiz1/cmp_luasnip")
+return require("lazy").setup({
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
 
-    use({
+    {
+        "jose-elias-alvarez/null-ls.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" },
+    },
+
+    {
+        "hrsh7th/nvim-cmp",
+        dependencies = {
+            "L3MON4D3/LuaSnip",
+            config = function()
+                require("luasnip.loaders.from_vscode").load({})
+            end,
+        },
+    },
+    "hrsh7th/cmp-nvim-lsp",
+    "hrsh7th/cmp-nvim-lua",
+    "hrsh7th/cmp-nvim-lsp-signature-help",
+    "hrsh7th/cmp-vsnip",
+    "hrsh7th/cmp-path",
+    "hrsh7th/cmp-buffer",
+    "hrsh7th/vim-vsnip",
+    "saadparwaiz1/cmp_luasnip",
+
+    {
         "nvim-tree/nvim-tree.lua",
-        requires = {
+        dependencies = {
             "nvim-tree/nvim-web-devicons",
         },
-    })
+    },
 
-    use("Shatur/neovim-ayu")
+    "Shatur/neovim-ayu",
 
-    use({
+    {
         "nvim-lualine/lualine.nvim",
-        requires = { "nvim-tree/nvim-web-devicons", opt = true },
-    })
+        dependencies = { "nvim-tree/nvim-web-devicons", opt = true },
+    },
 
-    use({
+    {
         "akinsho/bufferline.nvim",
-        tag = "*",
-        requires = { "nvim-tree/nvim-web-devicons", opt = true },
-    })
+        dependencies = { "nvim-tree/nvim-web-devicons", opt = true },
+    },
 
-    use({
+    {
         "utilyre/barbecue.nvim",
-        tag = "*",
-        requires = {
+        dependencies = {
             "SmiteshP/nvim-navic",
             "nvim-tree/nvim-web-devicons",
         },
         config = function()
             require("barbecue").setup()
         end,
-    })
+    },
 
-    use({
-        "s1n7ax/nvim-window-picker",
-        tag = "v1.*",
-    })
+    "s1n7ax/nvim-window-picker",
 
-    use({
+    {
         "nvim-treesitter/nvim-treesitter",
-        run = function()
+        build = function()
             local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
             ts_update()
         end,
-    })
+    },
 
-    use("nvim-treesitter/playground")
-    use({
+    "nvim-treesitter/playground",
+
+    {
         "windwp/nvim-autopairs",
         config = function()
             require("nvim-autopairs").setup({})
         end,
-    })
-    use({
-        "rafamadriz/friendly-snippets",
-        {
-            "L3MON4D3/LuaSnip",
-            after = "nvim-cmp",
-            config = function()
-                require("luasnip.loaders.from_vscode").load({})
-            end,
-        },
-    })
+    },
 
-    use({
-        "akinsho/toggleterm.nvim",
-        tag = "*",
-    })
+    "rafamadriz/friendly-snippets",
 
-    use({
+    "akinsho/toggleterm.nvim",
+
+    {
         "nvim-telescope/telescope.nvim",
-        requires = { { "nvim-lua/plenary.nvim" } },
-    })
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            {
+                "glepnir/dashboard-nvim",
+                event = "VimEnter",
+                config = function()
+                    require("dashboard-config")
+                end,
+                dependencies = { "nvim-tree/nvim-web-devicons" },
+            },
+        },
+    },
 
-    use({
+    {
         "nvim-telescope/telescope-fzf-native.nvim",
-        run = "make",
-    })
+        build = "make",
+    },
 
-    use({ "junegunn/fzf", run = ":call fzf#install()" })
-    use("junegunn/fzf.vim")
+    { "junegunn/fzf", build = ":call fzf#install()" },
 
-    use({
+    "junegunn/fzf.vim",
+
+    {
         "folke/which-key.nvim",
         config = function()
             require("whichkey-config")
         end,
-    })
+    },
 
-    use({
-        "glepnir/dashboard-nvim",
-        after = "telescope.nvim",
-        event = "VimEnter",
-        config = function()
-            require("dashboard-config")
-        end,
-        requires = { "nvim-tree/nvim-web-devicons" },
-    })
-
-    use({
+    {
         "numToStr/Comment.nvim",
         config = function()
             require("Comment").setup()
         end,
-    })
+    },
 
-    use({
+    {
         "cappyzawa/trim.nvim",
         config = function()
             require("trim").setup({})
         end,
-    })
+    },
 
-    use("lukas-reineke/indent-blankline.nvim")
-    use("sindrets/diffview.nvim")
+    "lukas-reineke/indent-blankline.nvim",
+    "sindrets/diffview.nvim",
 
-    use({
+    {
         "folke/trouble.nvim",
-        requires = { "nvim-tree/nvim-web-devicons" },
-    })
-end)
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+    },
+}, {
+    change_detection = {
+        notify = false,
+    },
+})

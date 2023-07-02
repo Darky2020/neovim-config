@@ -1,16 +1,18 @@
 -----------------------------------------------------
 HIGH Priority:
+Add search result count in lualine
 
 -----------------------------------------------------
 MEDIUM Priority:
-Format and lint the config files
 Add shortcuts for creating generic files such as .gitignore or pyrightconfig.json
+Add a border around floating windows like mason, lazy or lspinfo
 
 -----------------------------------------------------
 LOW Priority:
 Add custom highlighting for python r"" / f"" / b"" strings
 Move the dashboard to DOOM setting(?)
 Opening dashboard is jank with toggleterm toggled on
+Figure out how to lazy load some plugins (cmp in particular)
 
 -----------------------------------------------------
 Look into:
