@@ -39,6 +39,20 @@ return require("lazy").setup({
     "hrsh7th/vim-vsnip",
     "saadparwaiz1/cmp_luasnip",
 
+    -- {
+    --     "mfussenegger/nvim-dap",
+    --     dependencies = {
+    --         "rcarriga/nvim-dap-ui",
+    --         {
+    --             "mfussenegger/nvim-dap-python",
+    --
+    --             setup = function()
+    --                 require("dap-python").setup("python3")
+    --             end,
+    --         },
+    --     },
+    -- },
+
     {
         "nvim-tree/nvim-tree.lua",
         dependencies = {
@@ -74,7 +88,8 @@ return require("lazy").setup({
     {
         "nvim-treesitter/nvim-treesitter",
         build = function()
-            local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
+            local ts_update =
+                require("nvim-treesitter.install").update({ with_sync = true })
             ts_update()
         end,
     },
