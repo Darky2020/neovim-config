@@ -4,7 +4,6 @@ HIGH Priority:
 -----------------------------------------------------
 MEDIUM Priority:
 Add shortcuts for creating generic files such as .gitignore or pyrightconfig.json
-Configure a debugger
 Add a border around floating windows like mason, lazy or lspinfo
 
 -----------------------------------------------------

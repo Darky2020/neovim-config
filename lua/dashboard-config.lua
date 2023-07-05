@@ -39,6 +39,12 @@ require("dashboard").setup({
                 key = "l",
             },
             {
+                desc = "Health",
+                group = "DiagnosticOk",
+                action = "checkhealth",
+                key = "h",
+            },
+            {
                 desc = "Close dashboad",
                 group = "",
                 action = "bd",

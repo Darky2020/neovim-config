@@ -39,19 +39,41 @@ return require("lazy").setup({
     "hrsh7th/vim-vsnip",
     "saadparwaiz1/cmp_luasnip",
 
-    -- {
-    --     "mfussenegger/nvim-dap",
-    --     dependencies = {
-    --         "rcarriga/nvim-dap-ui",
-    --         {
-    --             "mfussenegger/nvim-dap-python",
-    --
-    --             setup = function()
-    --                 require("dap-python").setup("python3")
-    --             end,
-    --         },
-    --     },
-    -- },
+    {
+        "mfussenegger/nvim-dap",
+    },
+    {
+        "rcarriga/nvim-dap-ui",
+
+        -- config = function(_, opts)
+        --     local dap = require("dap")
+        --     local dapui = require("dapui")
+        --     dapui.setup()
+        --     dap.listeners.after.event_initialized["dapui_config"] = function()
+        --         dapui.open()
+        --     end
+        --     dap.listeners.before.event_terminated["dapui_config"] = function()
+        --         dapui.close()
+        --     end
+        --     dap.listeners.before.event_exited["dapui_config"] = function()
+        --         dapui.close()
+        --     end
+        -- end,
+    },
+    {
+        "mfussenegger/nvim-dap-python",
+        ft = "python",
+        dependencies = {
+            "mfussenegger/nvim-dap",
+            "rcarriga/nvim-dap-ui",
+        },
+        config = function(_, opts)
+            local path =
+            "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
+
+            require("dap-python").setup(path)
+        end,
+    },
 
     {
         "nvim-tree/nvim-tree.lua",
@@ -109,6 +131,8 @@ return require("lazy").setup({
 
     {
         "nvim-telescope/telescope.nvim",
+        lazy = false,
+        module = "telescope",
         dependencies = {
             "nvim-lua/plenary.nvim",
             {
