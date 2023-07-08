@@ -24,6 +24,10 @@ require("trouble-config")
 -- Share clipboard with the system one
 vim.opt.clipboard = "unnamedplus"
 
+-- Create folds by indentation and don't auto fold stuff
+vim.opt.foldmethod = "indent"
+vim.opt.foldenable = false
+
 -- Line numbers
 vim.opt.number = true
 vim.opt.relativenumber = true
